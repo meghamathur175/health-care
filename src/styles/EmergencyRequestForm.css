@@ -1,0 +1,175 @@
+/* Global Reset and Full Height */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}    
+
+form input,
+form button,
+form select {
+    box-sizing: border-box;
+}
+
+/* App container */
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #3f75cd, #cfd9df);
+}
+
+/* Heading styling */
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 40px;
+}
+
+/* Full screen container for map and form */
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 90%;
+    height: 90%;
+    max-width: none;
+}
+
+/* Map container */
+.map-container {
+    width: 50%;
+    height: 100%;
+    border-radius: 0;
+    overflow: hidden;
+    padding-right: 50px;
+    border-radius: 20px;
+}
+
+/* Form container */
+.form-wrapper {
+    width: 50%;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    box-shadow: 10 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Input fields and button */
+form input,
+form button, form select{
+    width: 80%;
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 20px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease-in-out;
+}
+
+
+/* Input field styling */
+form input, form select {
+    border: 2px solid #ccc;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus state for inputs */
+form input:focus {
+    outline: none;
+    border-color: #000000;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+}
+
+/* Button styling */
+form button {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    font-size: 17px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease-in-out;
+}
+
+/* Button hover effect */
+form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 10 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    .form-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .map-container,
+    .form-wrapper {
+        width: 100%;
+        height: 50%;
+    }
+
+    /* Adjust form padding and button size on smaller screens */
+    form input,
+    form button, form select {
+        width: 90%;
+        padding: 10px;
+    }
+}
+
+/* Style the select dropdown to match input fields */
+form select {
+    width: 80%;
+    margin-bottom: 15px;
+    /* padding: 12px; */
+    border-radius: 8px;
+    font-size: 19px;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    height: 48px; /* match to input height */
+    line-height: 1.2;
+    padding: 12px;
+    vertical-align: middle;
+}
+
+/* Focus state for Select dropdown */
+form select:focus {
+    outline: none;
+    border-color: #000000;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+}
+
+/* Style for Select dropdown in modern browsers (without default arrow) */
+form select {
+    appearance: none; /* For Chrome, Safari, Edge, Firefox */
+    -webkit-appearance: none; /* For Safari */
+    -moz-appearance: none; /* For Firefox */
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    padding-right: 30px; /* Adjust padding to accommodate custom arrow */
+}
+
+/* Style for Select dropdown in the wrapper */
+form select::after {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #007bff;
+    pointer-events: none;
+}
+
